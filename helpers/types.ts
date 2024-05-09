@@ -18,7 +18,8 @@ export type eNetwork =
   | eFantomNetwork
   | eOptimismNetwork
   | eTenderlyNetwork
-  | eBaseNetwork;
+  | eBaseNetwork
+  | eEtherlinkNetwork;
 
 type eTenderlyNetwork = "tenderly";
 
@@ -48,6 +49,10 @@ export enum eEthereumNetwork {
 export enum eBaseNetwork {
   base = "base",
   baseGoerli = "base-goerli",
+}
+
+export enum eEtherlinkNetwork {
+  etherlinkTest = "etherlinkTest",
 }
 
 export enum ePolygonNetwork {
@@ -465,6 +470,10 @@ export interface iAvalancheParamsPerNetwork<T> {
 export interface iArbitrumParamsPerNetwork<T> {
   [eArbitrumNetwork.arbitrum]: T;
   [eArbitrumNetwork.arbitrumTestnet]: T;
+}
+
+export interface iEtherlinkParamsPernetwork<T> {
+  [eEtherlinkNetwork.etherlinkTest]: T;
 }
 
 export interface iParamsPerPool<T> {

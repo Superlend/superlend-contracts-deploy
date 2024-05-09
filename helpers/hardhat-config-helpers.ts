@@ -12,6 +12,7 @@ import {
   eFantomNetwork,
   eOptimismNetwork,
   eBaseNetwork,
+  eEtherlinkNetwork,
 } from "./types";
 
 require("dotenv").config();
@@ -98,10 +99,12 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
   [eBaseNetwork.base]: `https://base-mainnet.g.alchemy.com/v2/${getAlchemyKey(
     eBaseNetwork.base
   )}`,
+  [eEtherlinkNetwork.etherlinkTest]: "https://node.ghostnet.etherlink.com",
 };
 
 export const LIVE_NETWORKS: iParamsPerNetwork<boolean> = {
   [eEthereumNetwork.main]: true,
+  [eEtherlinkNetwork.etherlinkTest]: true,
   [ePolygonNetwork.polygon]: true,
   [eArbitrumNetwork.arbitrum]: true,
   [eHarmonyNetwork.main]: true,

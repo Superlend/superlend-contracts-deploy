@@ -38,7 +38,7 @@ const func: DeployFunction = async function ({
     POOL_ADDRESSES_PROVIDER_ID
   );
 
-  const fallbackOracleAddress = ZERO_ADDRESS;
+  // const fallbackOracleAddress = ZERO_ADDRESS;
 
   const reserveAssets = await getReserveAddresses(poolConfig, network);
   const chainlinkAggregators = await getChainlinkOracles(poolConfig, network);
@@ -48,6 +48,14 @@ const func: DeployFunction = async function ({
     chainlinkAggregators
   );
 
+  // Deploy AaveFallbackOracle
+  const fallbackOracle = await deploy(FALLBACK_ORACLE_ID, {
+    from: deployer,
+    args: [],
+    ...COMMON_DEPLOY_PARAMS,
+    contract: "AaveFallbackOracle",
+  });
+
   // Deploy AaveOracle
   await deploy(ORACLE_ID, {
     from: deployer,
@@ -55,7 +63,7 @@ const func: DeployFunction = async function ({
       addressesProviderAddress,
       assets,
       sources,
-      fallbackOracleAddress,
+      fallbackOracle.address,
       ZERO_ADDRESS,
       parseUnits("1", OracleQuoteUnit),
     ],

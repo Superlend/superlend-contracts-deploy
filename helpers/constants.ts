@@ -8,6 +8,7 @@ import {
   eHarmonyNetwork,
   eOptimismNetwork,
   ePolygonNetwork,
+  eEtherlinkNetwork,
 } from "./types";
 
 const {
@@ -46,6 +47,8 @@ export const WRAPPED_NATIVE_TOKEN_PER_NETWORK: { [network: string]: string } = {
   [eFantomNetwork.main]: "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
   [eHarmonyNetwork.main]: "0xcF664087a5bB0237a0BAd6742852ec6c8d69A27a",
   [ePolygonNetwork.polygon]: "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
+  [eEtherlinkNetwork.etherlinkTest]:
+    "0x340Fa96ACF0b8D36828e1D8963CdF3E95c58ed06",
 };
 
 export const ZERO_BYTES_32 =
@@ -100,6 +103,8 @@ export const chainlinkAggregatorProxy: Record<string, string> = {
   goerli: "0x60E4B131f0F219c72b0346675283E73888e4AB24",
   [eArbitrumNetwork.goerliNitro]: "0xC09e69E79106861dF5d289dA88349f10e2dc6b5C",
   [eEthereumNetwork.sepolia]: "0x6c60d915c7a646860dba836ffcb7f112b6cfdc76",
+  [eEtherlinkNetwork.etherlinkTest]:
+    "0xE06FE39f066562DBfE390167AE49D8Cb66e1F887",
 };
 
 export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
@@ -123,6 +128,8 @@ export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
   goerli: "0x60E4B131f0F219c72b0346675283E73888e4AB24",
   [eArbitrumNetwork.goerliNitro]: "0xC09e69E79106861dF5d289dA88349f10e2dc6b5C",
   [eEthereumNetwork.sepolia]: "0x6c60d915c7a646860dba836ffcb7f112b6cfdc76",
+  [eEtherlinkNetwork.etherlinkTest]:
+    "0xE06FE39f066562DBfE390167AE49D8Cb66e1F887",
 };
 
 export const ETHEREUM_SHORT_EXECUTOR =
