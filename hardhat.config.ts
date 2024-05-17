@@ -45,8 +45,8 @@ export default {
       {
         version: "0.8.10",
         settings: {
-          optimizer: { enabled: true, runs: 100_000 },
-          evmVersion: "berlin",
+          optimizer: { enabled: true, runs: 10000 },
+          evmVersion: "london",
         },
       },
       {
@@ -80,10 +80,10 @@ export default {
       ePolygonNetwork.mumbai,
       80001
     ),
-    arbitrum: getCommonNetworkConfig(eArbitrumNetwork.arbitrum, 42161),
+    arbitrum: getCommonNetworkConfig(eArbitrumNetwork.arbitrum, 421614),
     [eArbitrumNetwork.arbitrumTestnet]: getCommonNetworkConfig(
       eArbitrumNetwork.arbitrumTestnet,
-      421611
+      421614
     ),
     [eHarmonyNetwork.main]: getCommonNetworkConfig(
       eHarmonyNetwork.main,
@@ -212,14 +212,25 @@ export default {
     ? DETERMINISTIC_FACTORIES
     : undefined,
   etherscan: {
-    apiKey: ETHERSCAN_KEY,
+    apiKey: {
+      etherlinkTest: "YOU_CAN_COPY_ME",
+      [eArbitrumNetwork.arbitrumTestnet]: "ZRWTB7F4YCXMAXWWYJYP4P4BTI7WZ9DCNM",
+    },
     customChains: [
       {
-        network: eBaseNetwork.base,
-        chainId: 8453,
+        network: eEtherlinkNetwork.etherlinkTest,
+        chainId: 128123,
         urls: {
-          apiURL: "https://api.basescan.org/api",
-          browserURL: "https://basescan.org/",
+          apiURL: "https://testnet-explorer.etherlink.com/api",
+          browserURL: "https://testnet-explorer.etherlink.com",
+        },
+      },
+      {
+        network: eArbitrumNetwork.arbitrumTestnet,
+        chainId: 421614,
+        urls: {
+          apiURL: "https://api-sepolia.arbiscan.io/api",
+          browserURL: "https://sepolia.arbiscan.io",
         },
       },
     ],

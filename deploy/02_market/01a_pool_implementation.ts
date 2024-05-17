@@ -21,7 +21,13 @@ const func: DeployFunction = async function ({
   deployments,
   ...hre
 }: HardhatRuntimeEnvironment) {
-  const { deploy } = deployments;
+  const { deploy, getOrNull } = deployments;
+
+  if (await getOrNull(POOL_IMPL_ID)) {
+    console.log(`Reusing ${POOL_IMPL_ID}`);
+    return;
+  }
+
   const { deployer } = await getNamedAccounts();
   const poolConfig = await loadPoolConfig(MARKET_NAME as ConfigNames);
   const network = (

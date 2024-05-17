@@ -72,7 +72,7 @@ const func: DeployFunction = async function ({
 
   // Deploy Reserves ATokens
 
-  const treasuryAddress = await getTreasuryAddress(poolConfig, network);
+  const treasuryAddress = deployer; // await getTreasuryAddress(poolConfig, network);
   const incentivesController = await deployments.get("IncentivesProxy");
   const reservesAddresses = await getReserveAddresses(poolConfig, network);
 
@@ -101,7 +101,7 @@ const func: DeployFunction = async function ({
   await savePoolTokens(reservesAddresses, dataProvider.address);
 
   deployments.log(`[Deployment] Configured all reserves`);
-  return true;
+  // return true;
 };
 
 // This script can only be run successfully once per market, core version, and network
