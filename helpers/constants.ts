@@ -49,6 +49,7 @@ export const WRAPPED_NATIVE_TOKEN_PER_NETWORK: { [network: string]: string } = {
   [ePolygonNetwork.polygon]: "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
   [eEtherlinkNetwork.etherlinkTest]:
     "0xC2ef9495272B43F5257b35A1b6ddA78932839871",
+  [ePolygonNetwork.amoy]: "0x0ae690AAD8663aaB12a671A6A0d74242332de85f",
 };
 
 export const ZERO_BYTES_32 =
@@ -107,6 +108,7 @@ export const chainlinkAggregatorProxy: Record<string, string> = {
   [eEthereumNetwork.sepolia]: "0x6c60d915c7a646860dba836ffcb7f112b6cfdc76",
   [eEtherlinkNetwork.etherlinkTest]:
     "0xE06FE39f066562DBfE390167AE49D8Cb66e1F887",
+  [ePolygonNetwork.amoy]: "0x001382149eBa3441043c1c66972b4772963f5D43",
 };
 
 export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
@@ -132,6 +134,7 @@ export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
   [eEthereumNetwork.sepolia]: "0x6c60d915c7a646860dba836ffcb7f112b6cfdc76",
   [eEtherlinkNetwork.etherlinkTest]:
     "0xE06FE39f066562DBfE390167AE49D8Cb66e1F887",
+  [ePolygonNetwork.amoy]: "0x001382149eBa3441043c1c66972b4772963f5D43",
 };
 
 export const ETHEREUM_SHORT_EXECUTOR =

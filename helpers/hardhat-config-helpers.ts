@@ -101,12 +101,14 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
     eBaseNetwork.base
   )}`,
   [eEtherlinkNetwork.etherlinkTest]: "https://node.ghostnet.etherlink.com",
+  [ePolygonNetwork.amoy]: "https://rpc-amoy.polygon.technology",
 };
 
 export const LIVE_NETWORKS: iParamsPerNetwork<boolean> = {
   [eEthereumNetwork.main]: true,
   [eEtherlinkNetwork.etherlinkTest]: true,
   [ePolygonNetwork.polygon]: true,
+  [ePolygonNetwork.amoy]: true,
   [eArbitrumNetwork.arbitrum]: true,
   [eArbitrumNetwork.arbitrumTestnet]: true,
   [eHarmonyNetwork.main]: true,

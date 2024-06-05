@@ -58,6 +58,7 @@ export enum eEtherlinkNetwork {
 export enum ePolygonNetwork {
   polygon = "polygon",
   mumbai = "mumbai",
+  amoy = "amoy",
 }
 
 export enum eXDaiNetwork {
@@ -458,6 +459,7 @@ export interface iEthereumParamsPerNetwork<T> {
 export interface iPolygonParamsPerNetwork<T> {
   [ePolygonNetwork.polygon]: T;
   [ePolygonNetwork.mumbai]: T;
+  [ePolygonNetwork.amoy]: T;
 }
 
 export interface iXDaiParamsPerNetwork<T> {

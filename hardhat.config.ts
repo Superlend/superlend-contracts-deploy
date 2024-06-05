@@ -80,6 +80,7 @@ export default {
       ePolygonNetwork.mumbai,
       80001
     ),
+    [ePolygonNetwork.amoy]: getCommonNetworkConfig(ePolygonNetwork.amoy, 80002),
     arbitrum: getCommonNetworkConfig(eArbitrumNetwork.arbitrum, 421614),
     [eArbitrumNetwork.arbitrumTestnet]: getCommonNetworkConfig(
       eArbitrumNetwork.arbitrumTestnet,
