@@ -108,6 +108,7 @@ export const LIVE_NETWORKS: iParamsPerNetwork<boolean> = {
   [eEtherlinkNetwork.etherlinkTest]: true,
   [ePolygonNetwork.polygon]: true,
   [eArbitrumNetwork.arbitrum]: true,
+  [eArbitrumNetwork.arbitrumTestnet]: true,
   [eHarmonyNetwork.main]: true,
   [eAvalancheNetwork.avalanche]: true,
   [eFantomNetwork.main]: true,

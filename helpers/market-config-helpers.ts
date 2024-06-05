@@ -54,6 +54,7 @@ export enum ConfigNames {
   Base = "Base",
   baseGoerli = "base-goerli",
   EtherLink = "EtherLink",
+  PlendFinance = "Plend Finance",
 }
 
 export const getParamPerNetwork = <T>(
@@ -122,6 +123,8 @@ export const loadPoolConfig = (configName: ConfigNames): PoolConfiguration => {
     case ConfigNames.Base:
       return BaseConfig;
     case ConfigNames.EtherLink:
+      return EtherlinkV3Market;
+    case ConfigNames.PlendFinance:
       return EtherlinkV3Market;
     default:
       throw new Error(

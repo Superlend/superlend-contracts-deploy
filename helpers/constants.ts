@@ -41,14 +41,14 @@ export const WRAPPED_NATIVE_TOKEN_PER_NETWORK: { [network: string]: string } = {
   [eEthereumNetwork.main]: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
   [eArbitrumNetwork.arbitrum]: "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
   [eArbitrumNetwork.arbitrumTestnet]:
-    "0x8592a357252606f5cA2897BD4f500201F7245C28",
+    "0x980B62Da83eFf3D4576C647993b0c1D7faf17c73",
   [eOptimismNetwork.main]: "0x4200000000000000000000000000000000000006",
   [eAvalancheNetwork.avalanche]: "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
   [eFantomNetwork.main]: "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
   [eHarmonyNetwork.main]: "0xcF664087a5bB0237a0BAd6742852ec6c8d69A27a",
   [ePolygonNetwork.polygon]: "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
   [eEtherlinkNetwork.etherlinkTest]:
-    "0x340Fa96ACF0b8D36828e1D8963CdF3E95c58ed06",
+    "0xC2ef9495272B43F5257b35A1b6ddA78932839871",
 };
 
 export const ZERO_BYTES_32 =
@@ -93,7 +93,7 @@ export const chainlinkAggregatorProxy: Record<string, string> = {
   fuji: "0x5498BB86BC934c8D34FDA08E81D444153d0D06aD",
   tenderly: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
   arbitrum: "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
-  "arbitrum-testnet": "0x5f0423B1a6935dc5596e7A24d98532b67A0AeFd8",
+  "arbitrum-testnet": "0xd30e2101a97dcbAeBCBC04F14C3f624E67A35165",
   rinkeby: "0x8A753747A1Fa494EC906cE90E9f37563A8AF630e",
   harmony: "0xdCD81FbbD6c4572A69a534D8b8152c562dA8AbEF",
   optimism: "0xA969bEB73d918f6100163Cd0fba3C586C269bee1",
@@ -118,7 +118,7 @@ export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
   fuji: "0x86d67c3D38D2bCeE722E601025C25a575021c6EA",
   tenderly: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
   arbitrum: "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
-  "arbitrum-testnet": "0x5f0423B1a6935dc5596e7A24d98532b67A0AeFd8",
+  "arbitrum-testnet": "0xd30e2101a97dcbAeBCBC04F14C3f624E67A35165",
   rinkeby: "0x8A753747A1Fa494EC906cE90E9f37563A8AF630e",
   harmony: "0xbaf7C8149D586055ed02c286367A41E0aDA96b7C",
   optimism: "0xA969bEB73d918f6100163Cd0fba3C586C269bee1",
