@@ -74,7 +74,7 @@ export const initReservesByHelper = async (
   )) as any as Pool;
 
   // CHUNK CONFIGURATION
-  const initChunks = 1;
+  const initChunks = 2;
 
   // Initialize variables for future reserves initialization
   let reserveTokens: string[] = [];
@@ -222,8 +222,9 @@ export const initReservesByHelper = async (
     chunkIndex < chunkedInitInputParams.length;
     chunkIndex++
   ) {
+    console.log(chunkedInitInputParams[chunkIndex]);
     const tx = await waitForTx(
-      await configurator.initReserves(chunkedInitInputParams[chunkIndex])
+      await configurator.initReserves(chunkedInitInputParams[chunkIndex]),
     );
 
     console.log(

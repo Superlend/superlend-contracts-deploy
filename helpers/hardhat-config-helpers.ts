@@ -92,9 +92,7 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
   [eEthereumNetwork.goerli]: `https://eth-goerli.alchemyapi.io/v2/${getAlchemyKey(
     eEthereumNetwork.goerli
   )}`,
-  [eEthereumNetwork.sepolia]: `https://eth-sepolia.g.alchemy.com/v2/${getAlchemyKey(
-    eEthereumNetwork.sepolia
-  )}`,
+  [eEthereumNetwork.sepolia]: `https://1rpc.io/sepolia`,
   [eArbitrumNetwork.goerliNitro]: `https://goerli-rollup.arbitrum.io/rpc`,
   [eBaseNetwork.baseGoerli]: `https://goerli.base.org`,
   [eBaseNetwork.base]: `https://base-mainnet.g.alchemy.com/v2/${getAlchemyKey(
@@ -107,6 +105,7 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
 export const LIVE_NETWORKS: iParamsPerNetwork<boolean> = {
   [eEthereumNetwork.main]: true,
   [eEtherlinkNetwork.etherlinkTest]: true,
+  [eEthereumNetwork.sepolia]: true,
   [ePolygonNetwork.polygon]: true,
   [ePolygonNetwork.amoy]: true,
   [eArbitrumNetwork.arbitrum]: true,

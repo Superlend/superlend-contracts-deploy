@@ -25,6 +25,8 @@ import "hardhat-contract-sizer";
 import "hardhat-dependency-compiler";
 import "@nomicfoundation/hardhat-chai-matchers";
 import "@nomiclabs/hardhat-etherscan";
+import { network } from "hardhat";
+import { url } from "inspector";
 
 const SKIP_LOAD = process.env.SKIP_LOAD === "true";
 const TASK_FOLDERS = ["misc", "market-registry"];
@@ -216,6 +218,8 @@ export default {
     apiKey: {
       etherlinkTest: "YOU_CAN_COPY_ME",
       [eArbitrumNetwork.arbitrumTestnet]: "ZRWTB7F4YCXMAXWWYJYP4P4BTI7WZ9DCNM",
+      [ePolygonNetwork.amoy]: "Y2MIUK7H78PE9XS5DN4GB4IFYUA2INH3F2",
+      [eEthereumNetwork.sepolia]: "6B6EGFR2NKXHF8GUXYD1QUH8GBYABI5JI1",
     },
     customChains: [
       {
@@ -227,11 +231,27 @@ export default {
         },
       },
       {
+        network: eEthereumNetwork.sepolia,
+        chainId: 11155111,
+        urls: {
+          apiURL: "https://api-sepolia.etherscan.io/api",
+          browserURL: "https://sepolia.etherscan.io",
+        },
+      },
+      {
         network: eArbitrumNetwork.arbitrumTestnet,
         chainId: 421614,
         urls: {
           apiURL: "https://api-sepolia.arbiscan.io/api",
           browserURL: "https://sepolia.arbiscan.io",
+        },
+      },
+      {
+        network: ePolygonNetwork.amoy,
+        chainId: 80002,
+        urls: {
+          apiURL: "https://api-amoy.polygonscan.com/api",
+          browserURL: "https://amoy.polygonscan.com",
         },
       },
     ],

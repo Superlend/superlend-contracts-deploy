@@ -5,22 +5,10 @@ import {
   strategyUSDT,
   strategyWBTC,
   strategyWETH,
+  strategyWETHNew,
 } from "../aave/reservesConfigs";
 import { ZERO_ADDRESS } from "../../helpers/constants";
-import {
-  strategyAGEUR,
-  strategyBAL,
-  strategyCRV,
-  strategyDPI,
-  strategyEURS,
-  strategyGHST,
-  strategyJEUR,
-  strategyLINK,
-  strategySUSHI,
-  strategyWMATIC,
-  strategyUSDC,
-  strategyAAVE,
-} from "./reservesConfigs";
+
 // ----------------
 // POOL--SPECIFIC PARAMS
 // ----------------
@@ -45,6 +33,7 @@ export const PolygonMarket: IAaveConfiguration = {
       USDT: "0xAa191693C1A3018878855b24188fc77D8B8E11f9",
       EUSDC: "0x431185f5467fc41f9fdb2EA498Dd4f7782029648",
       WMATIC: "0x0ae690AAD8663aaB12a671A6A0d74242332de85f",
+      WETH: "0x52eF3d68BaB452a294342DC3e5f464d7f610f72E",
     },
   },
   ChainlinkAggregator: {
@@ -53,6 +42,7 @@ export const PolygonMarket: IAaveConfiguration = {
       USDT: "0x3aC23DcB4eCfcBd24579e1f34542524d0E4eDeA8",
       EUSDC: "0x1b8739bB4CdF0089d07097A9Ae5Bd274b29C6F16",
       WMATIC: "0x001382149eBa3441043c1c66972b4772963f5D43",
+      WETH: "0xF0d50568e3A7e8259E16663972b11910F89BD8e7",
     },
   },
   ReservesConfig: {
@@ -60,6 +50,7 @@ export const PolygonMarket: IAaveConfiguration = {
     USDT: strategyUSDT,
     EUSDC: strategyUSDT,
     WMATIC: strategyWETH,
+    WETH: strategyWETH,
 
     // EUSD: strategyEUSD,
     // agEURO: strategyEUSD,

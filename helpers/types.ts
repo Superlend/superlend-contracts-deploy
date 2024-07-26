@@ -43,7 +43,7 @@ export enum eEthereumNetwork {
   tenderly = "tenderly",
   rinkeby = "rinkeby",
   goerli = "goerli",
-  sepolia = "sepolia",
+  sepolia = "sepolia-eth",
 }
 
 export enum eBaseNetwork {
@@ -290,6 +290,8 @@ export interface iAssetBase<T> {
   AVAX: T;
   EXTZ: T;
   EUSDC: T;
+  tzBTC: T;
+  ETH: T;
 }
 
 export type iAssetsWithoutETH<T> = Omit<iAssetBase<T>, "ETH">;

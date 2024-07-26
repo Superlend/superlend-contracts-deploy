@@ -189,7 +189,6 @@ export const getReserveAddresses = async (
 
   if (isLive && !poolConfig.TestnetMarket) {
     console.log("[NOTICE] Using ReserveAssets from configuration file");
-
     return (
       getParamPerNetwork<ITokenAddress>(poolConfig.ReserveAssets, network) || {}
     );

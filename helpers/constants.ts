@@ -50,6 +50,7 @@ export const WRAPPED_NATIVE_TOKEN_PER_NETWORK: { [network: string]: string } = {
   [eEtherlinkNetwork.etherlinkTest]:
     "0xC2ef9495272B43F5257b35A1b6ddA78932839871",
   [ePolygonNetwork.amoy]: "0x0ae690AAD8663aaB12a671A6A0d74242332de85f",
+  [eEthereumNetwork.sepolia]: "0xfFf9976782d46CC05630D1f6eBAb18b2324d6B14",
 };
 
 export const ZERO_BYTES_32 =
@@ -105,10 +106,10 @@ export const chainlinkAggregatorProxy: Record<string, string> = {
   ropsten: "0x12BAaa24D85A4A180F0d5ae67b6aCbDDD58968EA",
   goerli: "0x60E4B131f0F219c72b0346675283E73888e4AB24",
   [eArbitrumNetwork.goerliNitro]: "0xC09e69E79106861dF5d289dA88349f10e2dc6b5C",
-  [eEthereumNetwork.sepolia]: "0x6c60d915c7a646860dba836ffcb7f112b6cfdc76",
   [eEtherlinkNetwork.etherlinkTest]:
     "0xE06FE39f066562DBfE390167AE49D8Cb66e1F887",
   [ePolygonNetwork.amoy]: "0x001382149eBa3441043c1c66972b4772963f5D43",
+  [eEthereumNetwork.sepolia]: "0x694AA1769357215DE4FAC081bf1f309aDC325306",
 };
 
 export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
@@ -131,7 +132,7 @@ export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
   ropsten: "0x12BAaa24D85A4A180F0d5ae67b6aCbDDD58968EA",
   goerli: "0x60E4B131f0F219c72b0346675283E73888e4AB24",
   [eArbitrumNetwork.goerliNitro]: "0xC09e69E79106861dF5d289dA88349f10e2dc6b5C",
-  [eEthereumNetwork.sepolia]: "0x6c60d915c7a646860dba836ffcb7f112b6cfdc76",
+  [eEthereumNetwork.sepolia]: "0x694AA1769357215DE4FAC081bf1f309aDC325306",
   [eEtherlinkNetwork.etherlinkTest]:
     "0xE06FE39f066562DBfE390167AE49D8Cb66e1F887",
   [ePolygonNetwork.amoy]: "0x001382149eBa3441043c1c66972b4772963f5D43",
