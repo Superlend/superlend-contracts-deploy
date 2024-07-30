@@ -34,6 +34,10 @@ export const EtherlinkV3Market: IAaveConfiguration = {
     ETH: strategyWETH,
     WXTZ: strategyWXTZ,
   },
+  ReserveFactorTreasuryAddress: {
+    [eEtherlinkNetwork.etherlinkTest]:
+      "0x3c7245B471faAB2aA4F4ccf07a7056C10989be68",
+  },
   EModes: {
     // StableEMode: {
     //   id: "1",
@@ -44,7 +48,6 @@ export const EtherlinkV3Market: IAaveConfiguration = {
     //   assets: ["EUSDC", "USDT"],
     // },
   },
-  ReserveFactorTreasuryAddress: {},
 };
 
 export default EtherlinkV3Market;

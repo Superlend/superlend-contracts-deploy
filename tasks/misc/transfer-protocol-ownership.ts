@@ -1,4 +1,4 @@
-import { POOL_ADMIN } from "./../../helpers/constants";
+import { EMERGENCY_ADMIN, POOL_ADMIN } from "./../../helpers/constants";
 import { FORK } from "./../../helpers/hardhat-config-helpers";
 import {
   EMISSION_MANAGER_ID,
@@ -38,6 +38,8 @@ task(
   const networkId = FORK ? FORK : hre.network.name;
   // Desired Admin at Polygon must be the bridge crosschain executor, not the multisig
   const desiredAdmin = POOL_ADMIN[networkId];
+  const desiredEmergencyAdmin = EMERGENCY_ADMIN[networkId];
+
   if (!desiredAdmin) {
     console.error(
       "The constant desired Multisig is undefined. Check missing admin address at MULTISIG_ADDRESS or GOVERNANCE_BRIDGE_EXECUTOR constant"
@@ -68,21 +70,21 @@ task(
 
   const emissionManager = await getEmissionManager();
   const currentOwner = await poolAddressesProvider.owner();
-  const paraswapSwapAdapter = await getOwnableContract(
-    await (
-      await hre.deployments.get("ParaSwapLiquiditySwapAdapter")
-    ).address
-  );
-  const paraswapRepayAdapter = await getOwnableContract(
-    await (
-      await hre.deployments.get("ParaSwapRepayAdapter")
-    ).address
-  );
-  const paraswapWithdrawSwapAdapter = await getOwnableContract(
-    await (
-      await hre.deployments.get("ParaSwapWithdrawSwapAdapter")
-    ).address
-  );
+  // const paraswapSwapAdapter = await getOwnableContract(
+  //   await (
+  //     await hre.deployments.get("ParaSwapLiquiditySwapAdapter")
+  //   ).address
+  // );
+  // const paraswapRepayAdapter = await getOwnableContract(
+  //   await (
+  //     await hre.deployments.get("ParaSwapRepayAdapter")
+  //   ).address
+  // );
+  // const paraswapWithdrawSwapAdapter = await getOwnableContract(
+  //   await (
+  //     await hre.deployments.get("ParaSwapWithdrawSwapAdapter")
+  //   ).address
+  // );
 
   if (currentOwner === desiredAdmin) {
     console.log(
@@ -101,29 +103,29 @@ task(
   }
 
   /** Start of Paraswap Helpers Ownership */
-  const isDeployerAdminParaswapRepayAdapter =
-    (await paraswapRepayAdapter.owner()) == deployer;
+  // const isDeployerAdminParaswapRepayAdapter =
+  //   (await paraswapRepayAdapter.owner()) == deployer;
 
-  if (isDeployerAdminParaswapRepayAdapter) {
-    await paraswapRepayAdapter.transferOwnership(desiredAdmin);
-    console.log("- Transferred ParaswapRepayAdapter ownership");
-  }
+  // if (isDeployerAdminParaswapRepayAdapter) {
+  //   await paraswapRepayAdapter.transferOwnership(desiredAdmin);
+  //   console.log("- Transferred ParaswapRepayAdapter ownership");
+  // }
 
-  const isDeployerAdminParaswapSwapAdapter =
-    (await paraswapSwapAdapter.owner()) == deployer;
+  // const isDeployerAdminParaswapSwapAdapter =
+  //   (await paraswapSwapAdapter.owner()) == deployer;
 
-  if (isDeployerAdminParaswapSwapAdapter) {
-    await paraswapSwapAdapter.transferOwnership(desiredAdmin);
-    console.log("- Transferred ParaswapSwapAdapter ownership");
-  }
+  // if (isDeployerAdminParaswapSwapAdapter) {
+  //   await paraswapSwapAdapter.transferOwnership(desiredAdmin);
+  //   console.log("- Transferred ParaswapSwapAdapter ownership");
+  // }
 
-  const isDeployerAdminParaswapWithdrawSwapAdapter =
-    (await paraswapWithdrawSwapAdapter.owner()) == deployer;
+  // const isDeployerAdminParaswapWithdrawSwapAdapter =
+  //   (await paraswapWithdrawSwapAdapter.owner()) == deployer;
 
-  if (isDeployerAdminParaswapWithdrawSwapAdapter) {
-    await paraswapWithdrawSwapAdapter.transferOwnership(desiredAdmin);
-    console.log("- Transferred ParaswapWithdrawSwapAdapter ownership");
-  }
+  // if (isDeployerAdminParaswapWithdrawSwapAdapter) {
+  //   await paraswapWithdrawSwapAdapter.transferOwnership(desiredAdmin);
+  //   console.log("- Transferred ParaswapWithdrawSwapAdapter ownership");
+  // }
   /** End of Paraswap Helpers Ownership */
 
   /** Start of Emergency Admin transfer */
@@ -131,7 +133,7 @@ task(
     emergencyAdmin
   );
   if (isDeployerEmergencyAdmin) {
-    await waitForTx(await aclManager.addEmergencyAdmin(desiredAdmin));
+    await waitForTx(await aclManager.addEmergencyAdmin(desiredEmergencyAdmin));
 
     await waitForTx(await aclManager.removeEmergencyAdmin(emergencyAdmin));
     console.log("- Transferred the ownership of Emergency Admin");
