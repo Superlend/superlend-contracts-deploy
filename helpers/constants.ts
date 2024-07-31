@@ -155,8 +155,9 @@ export const POOL_ADMIN: Record<string, string> = {
   [eBaseNetwork.base]: "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
   [eBaseNetwork.baseGoerli]: "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
   [eEthereumNetwork.tenderly]: ETHEREUM_SHORT_EXECUTOR,
+  // ADMIN: POOL ADMIN: address
   [eEtherlinkNetwork.etherlinkTest]:
-    "0x308bdD1c9279583fCba53918b03d8e19642AdcA8",
+    "0x250fB04547404729D22Eb8f9C498Da13E9980f2D",
 };
 
 export const EMERGENCY_ADMIN: Record<string, string> = {
@@ -167,6 +168,7 @@ export const EMERGENCY_ADMIN: Record<string, string> = {
   [eOptimismNetwork.main]: "0xE50c8C619d05ff98b22Adf991F17602C774F785c",
   [ePolygonNetwork.polygon]: "0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58",
   [eEthereumNetwork.main]: ETHEREUM_SHORT_EXECUTOR,
+  // ADMIN: EMERGENCY ADMIN: address
   [eEtherlinkNetwork.etherlinkTest]:
     "0x250fB04547404729D22Eb8f9C498Da13E9980f2D",
 };

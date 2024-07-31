@@ -216,7 +216,7 @@ export default {
     : undefined,
   etherscan: {
     apiKey: {
-      etherlinkTest: "YOU_CAN_COPY_ME",
+      etherlinkTest: "NO_KEY",
       [eArbitrumNetwork.arbitrumTestnet]: "ZRWTB7F4YCXMAXWWYJYP4P4BTI7WZ9DCNM",
       [ePolygonNetwork.amoy]: "Y2MIUK7H78PE9XS5DN4GB4IFYUA2INH3F2",
       [eEthereumNetwork.sepolia]: "6B6EGFR2NKXHF8GUXYD1QUH8GBYABI5JI1",
@@ -226,8 +226,8 @@ export default {
         network: eEtherlinkNetwork.etherlinkTest,
         chainId: 128123,
         urls: {
-          apiURL: "https://testnet-explorer.etherlink.com/api",
-          browserURL: "https://testnet-explorer.etherlink.com",
+          apiURL: "https://testnet.explorer.etherlink.com/api",
+          browserURL: "https://testnet.explorer.etherlink.com",
         },
       },
       {
