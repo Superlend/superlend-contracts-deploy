@@ -1,6 +1,5 @@
 import { eContractid, IReserveParams } from "../../helpers/types";
 import {
-  rateStrategyStableOne,
   rateStrategyVolatileOne,
 } from "../aave/rateStrategies";
 
@@ -16,29 +15,12 @@ export const strategyBTC: IReserveParams = {
   reserveDecimals: "18",
   aTokenImpl: eContractid.AToken,
   reserveFactor: "2000", // 20%
+  // TODO: change it to usd value
   supplyCap: "100000", // 100k
   borrowCap: "25000", // 25k
   debtCeiling: "0",
   borrowableIsolation: false,
 };
-
-// export const strategyBTC: IReserveParams = {
-//   strategy: rateStrategyVolatileOne,
-//   baseLTVAsCollateral: "7000",
-//   liquidationThreshold: "7500",
-//   liquidationBonus: "11000",
-//   liquidationProtocolFee: "1000",
-//   borrowingEnabled: true,
-//   stableBorrowRateEnabled: false,
-//   flashLoanEnabled: false,
-//   reserveDecimals: "18",
-//   aTokenImpl: eContractid.AToken,
-//   reserveFactor: "2000",
-//   supplyCap: "100000", // 100k
-//   borrowCap: "25000", // 25k
-//   debtCeiling: "0",
-//   borrowableIsolation: false,
-// };
 
 export const strategyUSDT: IReserveParams = {
   strategy: rateStrategyVolatileOne,
@@ -52,29 +34,12 @@ export const strategyUSDT: IReserveParams = {
   reserveDecimals: "18",
   aTokenImpl: eContractid.AToken,
   reserveFactor: "1000", // 10%
+  // TODO: change it to usd value
   supplyCap: "100000", // 100k
   borrowCap: "25000", // 25k
   debtCeiling: "0",
   borrowableIsolation: false,
 };
-
-// export const strategyUSDT: IReserveParams = {
-//   strategy: rateStrategyVolatileOne,
-//   baseLTVAsCollateral: "7000",
-//   liquidationThreshold: "7500",
-//   liquidationBonus: "11000",
-//   liquidationProtocolFee: "1000",
-//   borrowingEnabled: true,
-//   stableBorrowRateEnabled: false,
-//   flashLoanEnabled: false,
-//   reserveDecimals: "18",
-//   aTokenImpl: eContractid.AToken,
-//   reserveFactor: "2000",
-//   supplyCap: "100000", // 100k
-//   borrowCap: "25000", // 25k
-//   debtCeiling: "0",
-//   borrowableIsolation: false,
-// };
 
 export const strategyUSDC: IReserveParams = {
   strategy: rateStrategyVolatileOne,
@@ -88,29 +53,12 @@ export const strategyUSDC: IReserveParams = {
   reserveDecimals: "18",
   aTokenImpl: eContractid.AToken,
   reserveFactor: "1000", // 10%
+  // TODO: change it to usd value
   supplyCap: "100000", // 100k
   borrowCap: "25000", // 25k
   debtCeiling: "0",
   borrowableIsolation: false,
 };
-
-// export const strategyUSDC: IReserveParams = {
-//   strategy: rateStrategyVolatileOne,
-//   baseLTVAsCollateral: "7000",
-//   liquidationThreshold: "7500",
-//   liquidationBonus: "11000",
-//   liquidationProtocolFee: "1000",
-//   borrowingEnabled: true,
-//   stableBorrowRateEnabled: false,
-//   flashLoanEnabled: false,
-//   reserveDecimals: "18",
-//   aTokenImpl: eContractid.AToken,
-//   reserveFactor: "2000",
-//   supplyCap: "100000", // 100k
-//   borrowCap: "25000", // 25k
-//   debtCeiling: "0",
-//   borrowableIsolation: false,
-// };
 
 export const strategyWXTZ: IReserveParams = {
   strategy: rateStrategyVolatileOne,
@@ -124,6 +72,7 @@ export const strategyWXTZ: IReserveParams = {
   reserveDecimals: "18",
   aTokenImpl: eContractid.AToken,
   reserveFactor: "1000", // 10%
+  // TODO: change it to usd value
   supplyCap: "100000", // 100k
   borrowCap: "25000", // 25k
   debtCeiling: "0",
@@ -142,6 +91,7 @@ export const strategyWETH: IReserveParams = {
   reserveDecimals: "18",
   aTokenImpl: eContractid.AToken,
   reserveFactor: "1500", // 15%
+  // TODO: change it to usd value
   supplyCap: "100000", // 100k
   borrowCap: "25000", // 25k
   debtCeiling: "0",
