@@ -16,7 +16,7 @@ import { ZERO_ADDRESS } from "../../helpers/constants";
 export const PolygonMarket: IAaveConfiguration = {
   ...AaveMarket,
   ProviderId: 34,
-  MarketId: "Plend Finance",
+  MarketId: "Superlend",
   ATokenNamePrefix: "",
   StableDebtTokenNamePrefix: "",
   VariableDebtTokenNamePrefix: "",

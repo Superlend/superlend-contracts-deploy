@@ -9,7 +9,7 @@ import { strategyWETHNew, sepoliaStrategyUSDC } from "../aave/reservesConfigs";
 export const EthereumV3Market: IAaveConfiguration = {
   ...AaveMarket,
   ProviderId: 30,
-  MarketId: "Plend Finance",
+  MarketId: "Superlend",
   ATokenNamePrefix: "",
   StableDebtTokenNamePrefix: "",
   VariableDebtTokenNamePrefix: "",

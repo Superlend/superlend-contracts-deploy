@@ -11,13 +11,12 @@ export const strategyBTC: IReserveParams = {
   liquidationProtocolFee: "1000", // 10%
   borrowingEnabled: true,
   stableBorrowRateEnabled: false,
-  flashLoanEnabled: false, // Updated
+  flashLoanEnabled: true, // Updated
   reserveDecimals: "18",
   aTokenImpl: eContractid.AToken,
   reserveFactor: "2000", // 20%
-  // TODO: change it to usd value
-  supplyCap: "100000", // 100k
-  borrowCap: "25000", // 25k
+  supplyCap: "2", // 100k
+  borrowCap: "1", // 25k
   debtCeiling: "0",
   borrowableIsolation: false,
 };
@@ -30,11 +29,10 @@ export const strategyUSDT: IReserveParams = {
   liquidationProtocolFee: "1000", // 10%
   borrowingEnabled: true,
   stableBorrowRateEnabled: false,
-  flashLoanEnabled: false,
+  flashLoanEnabled: true,
   reserveDecimals: "18",
   aTokenImpl: eContractid.AToken,
   reserveFactor: "1000", // 10%
-  // TODO: change it to usd value
   supplyCap: "100000", // 100k
   borrowCap: "25000", // 25k
   debtCeiling: "0",
@@ -49,11 +47,10 @@ export const strategyUSDC: IReserveParams = {
   liquidationProtocolFee: "1000", // 10%
   borrowingEnabled: true,
   stableBorrowRateEnabled: false,
-  flashLoanEnabled: false, 
+  flashLoanEnabled: true, 
   reserveDecimals: "18",
   aTokenImpl: eContractid.AToken,
   reserveFactor: "1000", // 10%
-  // TODO: change it to usd value
   supplyCap: "100000", // 100k
   borrowCap: "25000", // 25k
   debtCeiling: "0",
@@ -68,13 +65,12 @@ export const strategyWXTZ: IReserveParams = {
   liquidationProtocolFee: "1000", // 10%
   borrowingEnabled: true,
   stableBorrowRateEnabled: false,
-  flashLoanEnabled: false,
+  flashLoanEnabled: true,
   reserveDecimals: "18",
   aTokenImpl: eContractid.AToken,
   reserveFactor: "1000", // 10%
-  // TODO: change it to usd value
-  supplyCap: "100000", // 100k
-  borrowCap: "25000", // 25k
+  supplyCap: "145243", // 100k
+  borrowCap: "36311", // 25k
   debtCeiling: "0",
   borrowableIsolation: false,
 };
@@ -87,13 +83,12 @@ export const strategyWETH: IReserveParams = {
   liquidationProtocolFee: "1000", // 10%
   borrowingEnabled: true,
   stableBorrowRateEnabled: false,
-  flashLoanEnabled: false, 
+  flashLoanEnabled: true, 
   reserveDecimals: "18",
   aTokenImpl: eContractid.AToken,
   reserveFactor: "1500", // 15%
-  // TODO: change it to usd value
-  supplyCap: "100000", // 100k
-  borrowCap: "25000", // 25k
+  supplyCap: "38", // 100k
+  borrowCap: "10", // 25k
   debtCeiling: "0",
   borrowableIsolation: false,
 };

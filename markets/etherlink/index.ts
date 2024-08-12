@@ -16,7 +16,7 @@ export const EtherlinkV3Market: IAaveConfiguration = {
   ...AaveMarket,
   ProviderId: 30,
   WrappedNativeTokenSymbol: "WXTZ",
-  MarketId: "Plend Finance",
+  MarketId: "Superlend",
   ATokenNamePrefix: "",
   StableDebtTokenNamePrefix: "",
   VariableDebtTokenNamePrefix: "",
