@@ -48,7 +48,7 @@ export const WRAPPED_NATIVE_TOKEN_PER_NETWORK: { [network: string]: string } = {
   [eHarmonyNetwork.main]: "0xcF664087a5bB0237a0BAd6742852ec6c8d69A27a",
   [ePolygonNetwork.polygon]: "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
   [eEtherlinkNetwork.etherlinkTest]:
-    "0xC2ef9495272B43F5257b35A1b6ddA78932839871",
+    "0xB1Ea698633d57705e93b0E40c1077d46CD6A51d8",
   [ePolygonNetwork.amoy]: "0x0ae690AAD8663aaB12a671A6A0d74242332de85f",
   [eEthereumNetwork.sepolia]: "0xfFf9976782d46CC05630D1f6eBAb18b2324d6B14",
 };
@@ -107,7 +107,7 @@ export const chainlinkAggregatorProxy: Record<string, string> = {
   goerli: "0x60E4B131f0F219c72b0346675283E73888e4AB24",
   [eArbitrumNetwork.goerliNitro]: "0xC09e69E79106861dF5d289dA88349f10e2dc6b5C",
   [eEtherlinkNetwork.etherlinkTest]:
-    "0xE06FE39f066562DBfE390167AE49D8Cb66e1F887",
+    "0xB65b179c1Dde023A63650348B75fdE7C32786811",
   [ePolygonNetwork.amoy]: "0x001382149eBa3441043c1c66972b4772963f5D43",
   [eEthereumNetwork.sepolia]: "0x694AA1769357215DE4FAC081bf1f309aDC325306",
 };
@@ -134,7 +134,7 @@ export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
   [eArbitrumNetwork.goerliNitro]: "0xC09e69E79106861dF5d289dA88349f10e2dc6b5C",
   [eEthereumNetwork.sepolia]: "0x694AA1769357215DE4FAC081bf1f309aDC325306",
   [eEtherlinkNetwork.etherlinkTest]:
-    "0xE06FE39f066562DBfE390167AE49D8Cb66e1F887",
+    "0xB65b179c1Dde023A63650348B75fdE7C32786811",
   [ePolygonNetwork.amoy]: "0x001382149eBa3441043c1c66972b4772963f5D43",
 };
 

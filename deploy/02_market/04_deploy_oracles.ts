@@ -49,12 +49,13 @@ const func: DeployFunction = async function ({
   );
 
   // Deploy AaveFallbackOracle
-  const fallbackOracle = await deploy(FALLBACK_ORACLE_ID, {
-    from: deployer,
-    args: [],
-    ...COMMON_DEPLOY_PARAMS,
-    contract: "AaveFallbackOracle",
-  });
+  const fallbackOracle = "0x0000000000000000000000000000000000000000";
+  //   await deploy(FALLBACK_ORACLE_ID, {
+  //   from: deployer,
+  //   args: [],
+  //   ...COMMON_DEPLOY_PARAMS,
+  //   contract: "AaveFallbackOracle",
+  // });
 
   // Deploy AaveOracle
   await deploy(ORACLE_ID, {
@@ -63,7 +64,7 @@ const func: DeployFunction = async function ({
       addressesProviderAddress,
       assets,
       sources,
-      fallbackOracle.address,
+      fallbackOracle,
       ZERO_ADDRESS,
       parseUnits("1", OracleQuoteUnit),
     ],
