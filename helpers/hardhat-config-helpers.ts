@@ -99,12 +99,14 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
     eBaseNetwork.base
   )}`,
   [eEtherlinkNetwork.etherlinkTest]: "https://node.ghostnet.etherlink.com",
+  [eEtherlinkNetwork.etherlinkMain]: "https://node.mainnet.etherlink.com",
   [ePolygonNetwork.amoy]: "https://rpc-amoy.polygon.technology",
 };
 
 export const LIVE_NETWORKS: iParamsPerNetwork<boolean> = {
   [eEthereumNetwork.main]: true,
   [eEtherlinkNetwork.etherlinkTest]: true,
+  [eEtherlinkNetwork.etherlinkMain]: true,
   [eEthereumNetwork.sepolia]: true,
   [ePolygonNetwork.polygon]: true,
   [ePolygonNetwork.amoy]: true,
@@ -157,17 +159,18 @@ export const getCommonNetworkConfig = (
   gasPrice: GAS_PRICE_PER_NET[networkName] || undefined,
   ...(PRIVATE_KEY
     ? {
-        accounts: [PRIVATE_KEY],
-      }
+      accounts: [PRIVATE_KEY],
+    }
     : (!!MNEMONICS[networkName] || !!MNEMONIC) && {
-        accounts: {
-          mnemonic: MNEMONICS[networkName] || MNEMONIC,
-          path: MNEMONIC_PATH,
-          initialIndex: 0,
-          count: 10,
-        },
-      }),
+      accounts: {
+        mnemonic: MNEMONICS[networkName] || MNEMONIC,
+        path: MNEMONIC_PATH,
+        initialIndex: 0,
+        count: 10,
+      },
+    }),
   live: LIVE_NETWORKS[networkName] || false,
+  timeout: 5000,
 });
 
 const MNEMONICS: iParamsPerNetwork<string> = {
@@ -193,11 +196,11 @@ export const hardhatNetworkSettings = {
   accounts:
     FORK && !!MNEMONIC
       ? {
-          mnemonic: MNEMONIC,
-          path: MNEMONIC_PATH,
-          initialIndex: 0,
-          count: 10,
-        }
+        mnemonic: MNEMONIC,
+        path: MNEMONIC_PATH,
+        initialIndex: 0,
+        count: 10,
+      }
       : undefined,
 };
 

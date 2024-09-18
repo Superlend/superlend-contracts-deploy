@@ -3,6 +3,100 @@ import {
   rateStrategyVolatileOne,
 } from "../aave/rateStrategies";
 
+export const mainnet_strategyBTC: IReserveParams = {
+  strategy: rateStrategyVolatileOne,
+  baseLTVAsCollateral: "5500", // 55%
+  liquidationThreshold: "6000", // 60%
+  liquidationBonus: "10700", // 100% + 7%
+  liquidationProtocolFee: "1000", // 10%
+  borrowingEnabled: true,
+  stableBorrowRateEnabled: false,
+  flashLoanEnabled: true, // Updated
+  reserveDecimals: "8",
+  aTokenImpl: eContractid.AToken,
+  reserveFactor: "500", // 5%
+  supplyCap: "2", // 100k
+  borrowCap: "1", // 25k
+  debtCeiling: "0",
+  borrowableIsolation: false,
+}
+
+export const mainnet_strategyWETH: IReserveParams = {
+  strategy: rateStrategyVolatileOne,
+  baseLTVAsCollateral: "5500", // 55%
+  liquidationThreshold: "6000", // 60%
+  liquidationBonus: "10500", // 100% + 5%
+  liquidationProtocolFee: "1000", // 10%
+  borrowingEnabled: true,
+  stableBorrowRateEnabled: false,
+  flashLoanEnabled: true, // Updated
+  reserveDecimals: "18",
+  aTokenImpl: eContractid.AToken,
+  reserveFactor: "500", // 5%
+  supplyCap: "38", // 100k
+  borrowCap: "10", // 25k
+  debtCeiling: "0",
+  borrowableIsolation: false,
+}
+
+export const mainnet_strategyWXTZ: IReserveParams = {
+  strategy: rateStrategyVolatileOne,
+  baseLTVAsCollateral: "4700", // 47%
+  liquidationThreshold: "5200", // 52%
+  liquidationBonus: "10500", // 100% + 5%
+  liquidationProtocolFee: "1000", // 10%
+  borrowingEnabled: true,
+  stableBorrowRateEnabled: false,
+  flashLoanEnabled: true,
+  reserveDecimals: "18",
+  aTokenImpl: eContractid.AToken,
+  reserveFactor: "500", // 5%
+  supplyCap: "145243", // 100k
+  borrowCap: "36311", // 25k
+  debtCeiling: "0",
+  borrowableIsolation: false,
+};
+
+export const mainnet_strategyUSDT: IReserveParams = {
+  strategy: rateStrategyVolatileOne,
+  baseLTVAsCollateral: "7000", // 70%
+  liquidationThreshold: "7500", // 75%
+  liquidationBonus: "10500", // 100% + 5% (converted to basis points)
+  liquidationProtocolFee: "1000", // 10%
+  borrowingEnabled: true,
+  stableBorrowRateEnabled: false,
+  flashLoanEnabled: true,
+  reserveDecimals: "6",
+  aTokenImpl: eContractid.AToken,
+  reserveFactor: "500", // 5%
+  supplyCap: "100000", // 100k
+  borrowCap: "25000", // 25k
+  debtCeiling: "0",
+  borrowableIsolation: false,
+};
+
+export const mainnet_strategyUSDC: IReserveParams = {
+  strategy: rateStrategyVolatileOne,
+  baseLTVAsCollateral: "7000", // 70%
+  liquidationThreshold: "7500", // 75%
+  liquidationBonus: "10500", // 100% + 5% (converted to basis points)
+  liquidationProtocolFee: "1000", // 10%
+  borrowingEnabled: true,
+  stableBorrowRateEnabled: false,
+  flashLoanEnabled: true,
+  reserveDecimals: "6",
+  aTokenImpl: eContractid.AToken,
+  reserveFactor: "500", // 5%
+  supplyCap: "100000", // 100k
+  borrowCap: "25000", // 25k
+  debtCeiling: "0",
+  borrowableIsolation: false,
+};
+
+
+// ==============================
+
+
 export const strategyBTC: IReserveParams = {
   strategy: rateStrategyVolatileOne,
   baseLTVAsCollateral: "7300", // 73%

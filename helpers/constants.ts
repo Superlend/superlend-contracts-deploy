@@ -49,6 +49,8 @@ export const WRAPPED_NATIVE_TOKEN_PER_NETWORK: { [network: string]: string } = {
   [ePolygonNetwork.polygon]: "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
   [eEtherlinkNetwork.etherlinkTest]:
     "0xB1Ea698633d57705e93b0E40c1077d46CD6A51d8",
+  [eEtherlinkNetwork.etherlinkMain]:
+    "0xc9B53AB2679f573e480d01e0f49e2B5CFB7a3EAb",
   [ePolygonNetwork.amoy]: "0x0ae690AAD8663aaB12a671A6A0d74242332de85f",
   [eEthereumNetwork.sepolia]: "0xfFf9976782d46CC05630D1f6eBAb18b2324d6B14",
 };
@@ -107,7 +109,9 @@ export const chainlinkAggregatorProxy: Record<string, string> = {
   goerli: "0x60E4B131f0F219c72b0346675283E73888e4AB24",
   [eArbitrumNetwork.goerliNitro]: "0xC09e69E79106861dF5d289dA88349f10e2dc6b5C",
   [eEtherlinkNetwork.etherlinkTest]:
-    "0xB65b179c1Dde023A63650348B75fdE7C32786811",
+    "0xE06FE39f066562DBfE390167AE49D8Cb66e1F887",
+  [eEtherlinkNetwork.etherlinkMain]:
+    "0x929dB17A4673f150251fDc7AC4E7B5dd7b2Fd654",
   [ePolygonNetwork.amoy]: "0x001382149eBa3441043c1c66972b4772963f5D43",
   [eEthereumNetwork.sepolia]: "0x694AA1769357215DE4FAC081bf1f309aDC325306",
 };
@@ -134,7 +138,9 @@ export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
   [eArbitrumNetwork.goerliNitro]: "0xC09e69E79106861dF5d289dA88349f10e2dc6b5C",
   [eEthereumNetwork.sepolia]: "0x694AA1769357215DE4FAC081bf1f309aDC325306",
   [eEtherlinkNetwork.etherlinkTest]:
-    "0xB65b179c1Dde023A63650348B75fdE7C32786811",
+    "0xE06FE39f066562DBfE390167AE49D8Cb66e1F887",
+  [eEtherlinkNetwork.etherlinkMain]:
+    "0x929dB17A4673f150251fDc7AC4E7B5dd7b2Fd654",
   [ePolygonNetwork.amoy]: "0x001382149eBa3441043c1c66972b4772963f5D43",
 };
 
@@ -158,6 +164,8 @@ export const POOL_ADMIN: Record<string, string> = {
   // ADMIN: POOL ADMIN: address
   [eEtherlinkNetwork.etherlinkTest]:
     "0x250fB04547404729D22Eb8f9C498Da13E9980f2D",
+  [eEtherlinkNetwork.etherlinkMain]:
+    "0x78466b9DC7023Ad14b955dCDf8BffD2888BCfcF0",
 };
 
 export const EMERGENCY_ADMIN: Record<string, string> = {
@@ -171,6 +179,8 @@ export const EMERGENCY_ADMIN: Record<string, string> = {
   // ADMIN: EMERGENCY ADMIN: address
   [eEtherlinkNetwork.etherlinkTest]:
     "0x250fB04547404729D22Eb8f9C498Da13E9980f2D",
+  [eEtherlinkNetwork.etherlinkMain]:
+    "0x78466b9DC7023Ad14b955dCDf8BffD2888BCfcF0",
 };
 
 export const DEFAULT_NAMED_ACCOUNTS = {

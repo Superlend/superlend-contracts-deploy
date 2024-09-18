@@ -10,7 +10,7 @@ import path from "path";
 import fs from "fs/promises";
 declare var hre: HardhatRuntimeEnvironment;
 
-export const waitForTx = async (tx: ContractTransaction) => await tx.wait(1);
+export const waitForTx = async (tx: ContractTransaction) => await tx.wait(5);
 
 export const getCurrentBlock = async () => {
   return (await hre.ethers.provider.getBlock("latest")).number;

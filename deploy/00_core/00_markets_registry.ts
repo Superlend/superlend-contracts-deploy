@@ -4,11 +4,16 @@ import { PoolAddressesProviderRegistry } from "../../typechain";
 import { waitForTx } from "../../helpers/utilities/tx";
 import { COMMON_DEPLOY_PARAMS } from "../../helpers/env";
 
+import { main } from "../../helpers/custom-provider";
+
 const func: DeployFunction = async function ({
   getNamedAccounts,
   deployments,
   ...hre
 }: HardhatRuntimeEnvironment) {
+
+  await main();
+
   const { deploy } = deployments;
   const { deployer, addressesProviderRegistryOwner } = await getNamedAccounts();
 

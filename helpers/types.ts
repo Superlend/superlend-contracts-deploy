@@ -53,6 +53,7 @@ export enum eBaseNetwork {
 
 export enum eEtherlinkNetwork {
   etherlinkTest = "etherlinkTest",
+  etherlinkMain = "etherlink",
 }
 
 export enum ePolygonNetwork {
@@ -480,6 +481,7 @@ export interface iArbitrumParamsPerNetwork<T> {
 
 export interface iEtherlinkParamsPernetwork<T> {
   [eEtherlinkNetwork.etherlinkTest]: T;
+  [eEtherlinkNetwork.etherlinkMain]: T;
 }
 
 export interface iParamsPerPool<T> {

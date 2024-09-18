@@ -135,6 +135,10 @@ export default {
       eEtherlinkNetwork.etherlinkTest,
       128123
     ),
+    [eEtherlinkNetwork.etherlinkMain]: getCommonNetworkConfig(
+      eEtherlinkNetwork.etherlinkMain,
+      42793
+    ),
   },
   namedAccounts: {
     ...DEFAULT_NAMED_ACCOUNTS,
@@ -217,6 +221,7 @@ export default {
   etherscan: {
     apiKey: {
       etherlinkTest: "NO_KEY",
+      etherlink: "NO_KEY",
       [eArbitrumNetwork.arbitrumTestnet]: "ZRWTB7F4YCXMAXWWYJYP4P4BTI7WZ9DCNM",
       [ePolygonNetwork.amoy]: "Y2MIUK7H78PE9XS5DN4GB4IFYUA2INH3F2",
       [eEthereumNetwork.sepolia]: "6B6EGFR2NKXHF8GUXYD1QUH8GBYABI5JI1",
@@ -228,6 +233,14 @@ export default {
         urls: {
           apiURL: "https://testnet.explorer.etherlink.com/api",
           browserURL: "https://testnet.explorer.etherlink.com",
+        },
+      },
+      {
+        network: eEtherlinkNetwork.etherlinkMain,
+        chainId: 42793,
+        urls: {
+          apiURL: "https://explorer.etherlink.com/api",
+          browserURL: "https://explorer.etherlink.com",
         },
       },
       {
