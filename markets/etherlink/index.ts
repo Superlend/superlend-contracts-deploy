@@ -73,7 +73,7 @@ export const EtherlinkV3Market: IAaveConfiguration = {
     [eEtherlinkNetwork.etherlinkTest]:
       "0x250fB04547404729D22Eb8f9C498Da13E9980f2D",
     [eEtherlinkNetwork.etherlinkMain]:
-      "0x78466b9DC7023Ad14b955dCDf8BffD2888BCfcF0",
+      "0x669bd328f6C494949Ed9fB2dc8021557A6Dd005f",
   },
   EModes: {
     StableEMode: {

@@ -72,7 +72,7 @@ const func: DeployFunction = async function ({
 
   // Deploy Reserves ATokens
 
-  const treasuryAddress = "0x250fB04547404729D22Eb8f9C498Da13E9980f2D"; // await getTreasuryAddress(poolConfig, network);
+  const treasuryAddress = "0x669bd328f6C494949Ed9fB2dc8021557A6Dd005f"; // await getTreasuryAddress(poolConfig, network);
   const incentivesController = await deployments.get("IncentivesProxy");
   const reservesAddresses = await getReserveAddresses(poolConfig, network);
 

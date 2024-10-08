@@ -33,8 +33,8 @@ export const mainnet_strategyWETH: IReserveParams = {
   reserveDecimals: "18",
   aTokenImpl: eContractid.AToken,
   reserveFactor: "500", // 5%
-  supplyCap: "38", // 100k
-  borrowCap: "10", // 25k
+  supplyCap: "43", // 100k
+  borrowCap: "11", // 25k
   debtCeiling: "0",
   borrowableIsolation: false,
 }
@@ -51,8 +51,8 @@ export const mainnet_strategyWXTZ: IReserveParams = {
   reserveDecimals: "18",
   aTokenImpl: eContractid.AToken,
   reserveFactor: "500", // 5%
-  supplyCap: "145243", // 100k
-  borrowCap: "36311", // 25k
+  supplyCap: "158604", // 100k
+  borrowCap: "39651", // 25k
   debtCeiling: "0",
   borrowableIsolation: false,
 };
