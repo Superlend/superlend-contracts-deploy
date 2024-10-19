@@ -32,6 +32,8 @@ import {
 import { task } from "hardhat/config";
 import { getProxyAdminBySlot } from "../../helpers/utilities/tx";
 import { exit } from "process";
+import { eNetwork, loadPoolConfig } from "../../helpers";
+import { MARKET_NAME } from "../../helpers/env";
 
 task(
   `view-protocol-roles`,
@@ -44,6 +46,10 @@ task(
   const deployerSigner = await hre.ethers.getSigner(deployer);
   const aclSigner = await hre.ethers.getSigner(aclAdmin);
   const networkId = FORK ? FORK : hre.network.name;
+  const treasury =
+    loadPoolConfig(MARKET_NAME).ReserveFactorTreasuryAddress[
+      networkId as eNetwork
+    ];
   const desiredAdmin = POOL_ADMIN[networkId];
   const desiredEmergencyAdmin = EMERGENCY_ADMIN[networkId];
   if (!desiredAdmin) {
@@ -96,20 +102,20 @@ task(
   const aclManager = (
     await getACLManager(await poolAddressesProvider.getACLManager())
   ).connect(aclSigner);
-  const treasuryProxy = (await hre.ethers.getContractAt(
-    "InitializableAdminUpgradeabilityProxy",
-    (
-      await hre.deployments.get(TREASURY_PROXY_ID)
-    ).address,
-    deployerSigner
-  )) as InitializableAdminUpgradeabilityProxy;
-  const treasuryController = (await hre.ethers.getContractAt(
-    "AaveEcosystemReserveController",
-    (
-      await hre.deployments.get(TREASURY_CONTROLLER_ID)
-    ).address,
-    deployerSigner
-  )) as AaveEcosystemReserveController;
+  // const treasuryProxy = (await hre.ethers.getContractAt(
+  //   "InitializableAdminUpgradeabilityProxy",
+  //   (
+  //     await hre.deployments.get(TREASURY_PROXY_ID)
+  //   ).address,
+  //   deployerSigner
+  // )) as InitializableAdminUpgradeabilityProxy;
+  // const treasuryController = (await hre.ethers.getContractAt(
+  //   "AaveEcosystemReserveController",
+  //   (
+  //     await hre.deployments.get(TREASURY_CONTROLLER_ID)
+  //   ).address,
+  //   deployerSigner
+  // )) as AaveEcosystemReserveController;
   let wrappedTokenGateway: WrappedTokenGatewayV3;
   try {
     wrappedTokenGateway = await getWrappedTokenGateway();
@@ -121,21 +127,21 @@ task(
     );
   }
 
-  const paraswapSwapAdapter = await getOwnableContract(
-    await (
-      await hre.deployments.get("ParaSwapLiquiditySwapAdapter")
-    ).address
-  );
-  const paraswapRepayAdapter = await getOwnableContract(
-    await (
-      await hre.deployments.get("ParaSwapRepayAdapter")
-    ).address
-  );
-  const paraswapWithdrawSwapAdapter = await getOwnableContract(
-    await (
-      await hre.deployments.get("ParaSwapWithdrawSwapAdapter")
-    ).address
-  );
+  // const paraswapSwapAdapter = await getOwnableContract(
+  //   await (
+  //     await hre.deployments.get("ParaSwapLiquiditySwapAdapter")
+  //   ).address
+  // );
+  // const paraswapRepayAdapter = await getOwnableContract(
+  //   await (
+  //     await hre.deployments.get("ParaSwapRepayAdapter")
+  //   ).address
+  // );
+  // const paraswapWithdrawSwapAdapter = await getOwnableContract(
+  //   await (
+  //     await hre.deployments.get("ParaSwapWithdrawSwapAdapter")
+  //   ).address
+  // );
 
   /** Output of results*/
   const result = [
@@ -224,16 +230,21 @@ task(
         ? (await emissionManager.owner()) === desiredAdmin
         : false,
     },
+    // {
+    //   role: "Treasury Proxy Admin",
+    //   address: await getProxyAdminBySlot(treasuryProxy.address),
+    //   assert:
+    //     (await getProxyAdminBySlot(treasuryProxy.address)) === desiredAdmin,
+    // },
+    // {
+    //   role: "Treasury Controller owner",
+    //   address: await treasuryController.owner(),
+    //   assert: (await treasuryController.owner()) === desiredAdmin,
+    // },
     {
-      role: "Treasury Proxy Admin",
-      address: await getProxyAdminBySlot(treasuryProxy.address),
-      assert:
-        (await getProxyAdminBySlot(treasuryProxy.address)) === desiredAdmin,
-    },
-    {
-      role: "Treasury Controller owner",
-      address: await treasuryController.owner(),
-      assert: (await treasuryController.owner()) === desiredAdmin,
+      role: "Treasury",
+      address: treasury,
+      assert: treasury != undefined,
     },
     {
       role: "PoolAddressesProvider.getAddress INCENTIVES_CONTROLLER",
@@ -242,21 +253,21 @@ task(
         (await poolAddressesProvider.getAddress(incentivesControllerId)) ===
         rewardsController.address,
     },
-    {
-      role: "ParaSwapRepayAdapter owner",
-      address: await paraswapRepayAdapter.owner(),
-      assert: (await paraswapRepayAdapter.owner()) == desiredAdmin,
-    },
-    {
-      role: "ParaSwapSwapAdapter owner",
-      address: await paraswapSwapAdapter.owner(),
-      assert: (await paraswapSwapAdapter.owner()) == desiredAdmin,
-    },
-    {
-      role: "ParaSwapWithdrawSwapAdapter owner",
-      address: await paraswapWithdrawSwapAdapter.owner(),
-      assert: (await paraswapWithdrawSwapAdapter.owner()) == desiredAdmin,
-    },
+    // {
+    //   role: "ParaSwapRepayAdapter owner",
+    //   address: await paraswapRepayAdapter.owner(),
+    //   assert: (await paraswapRepayAdapter.owner()) == desiredAdmin,
+    // },
+    // {
+    //   role: "ParaSwapSwapAdapter owner",
+    //   address: await paraswapSwapAdapter.owner(),
+    //   assert: (await paraswapSwapAdapter.owner()) == desiredAdmin,
+    // },
+    // {
+    //   role: "ParaSwapWithdrawSwapAdapter owner",
+    //   address: await paraswapWithdrawSwapAdapter.owner(),
+    //   assert: (await paraswapWithdrawSwapAdapter.owner()) == desiredAdmin,
+    // },
   ];
 
   // Add emission manager check if 3.0.1v

@@ -19,3 +19,4 @@ coverage
 typechain
 types
 deployments
+.DS_Store

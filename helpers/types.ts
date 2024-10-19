@@ -43,7 +43,7 @@ export enum eEthereumNetwork {
   tenderly = "tenderly",
   rinkeby = "rinkeby",
   goerli = "goerli",
-  sepolia = "sepolia",
+  sepolia = "sepolia-eth",
 }
 
 export enum eBaseNetwork {
@@ -53,11 +53,13 @@ export enum eBaseNetwork {
 
 export enum eEtherlinkNetwork {
   etherlinkTest = "etherlinkTest",
+  etherlinkMain = "etherlink",
 }
 
 export enum ePolygonNetwork {
   polygon = "polygon",
   mumbai = "mumbai",
+  amoy = "amoy",
 }
 
 export enum eXDaiNetwork {
@@ -287,6 +289,10 @@ export interface iAssetBase<T> {
   STAKE: T;
   xSUSHI: T;
   AVAX: T;
+  EXTZ: T;
+  EUSDC: T;
+  tzBTC: T;
+  ETH: T;
 }
 
 export type iAssetsWithoutETH<T> = Omit<iAssetBase<T>, "ETH">;
@@ -456,6 +462,7 @@ export interface iEthereumParamsPerNetwork<T> {
 export interface iPolygonParamsPerNetwork<T> {
   [ePolygonNetwork.polygon]: T;
   [ePolygonNetwork.mumbai]: T;
+  [ePolygonNetwork.amoy]: T;
 }
 
 export interface iXDaiParamsPerNetwork<T> {
@@ -474,6 +481,7 @@ export interface iArbitrumParamsPerNetwork<T> {
 
 export interface iEtherlinkParamsPernetwork<T> {
   [eEtherlinkNetwork.etherlinkTest]: T;
+  [eEtherlinkNetwork.etherlinkMain]: T;
 }
 
 export interface iParamsPerPool<T> {

@@ -25,6 +25,8 @@ import "hardhat-contract-sizer";
 import "hardhat-dependency-compiler";
 import "@nomicfoundation/hardhat-chai-matchers";
 import "@nomiclabs/hardhat-etherscan";
+import { network } from "hardhat";
+import { url } from "inspector";
 
 const SKIP_LOAD = process.env.SKIP_LOAD === "true";
 const TASK_FOLDERS = ["misc", "market-registry"];
@@ -80,6 +82,7 @@ export default {
       ePolygonNetwork.mumbai,
       80001
     ),
+    [ePolygonNetwork.amoy]: getCommonNetworkConfig(ePolygonNetwork.amoy, 80002),
     arbitrum: getCommonNetworkConfig(eArbitrumNetwork.arbitrum, 421614),
     [eArbitrumNetwork.arbitrumTestnet]: getCommonNetworkConfig(
       eArbitrumNetwork.arbitrumTestnet,
@@ -131,6 +134,10 @@ export default {
     [eEtherlinkNetwork.etherlinkTest]: getCommonNetworkConfig(
       eEtherlinkNetwork.etherlinkTest,
       128123
+    ),
+    [eEtherlinkNetwork.etherlinkMain]: getCommonNetworkConfig(
+      eEtherlinkNetwork.etherlinkMain,
+      42793
     ),
   },
   namedAccounts: {
@@ -213,16 +220,35 @@ export default {
     : undefined,
   etherscan: {
     apiKey: {
-      etherlinkTest: "YOU_CAN_COPY_ME",
+      etherlinkTest: "NO_KEY",
+      etherlink: "NO_KEY",
       [eArbitrumNetwork.arbitrumTestnet]: "ZRWTB7F4YCXMAXWWYJYP4P4BTI7WZ9DCNM",
+      [ePolygonNetwork.amoy]: "Y2MIUK7H78PE9XS5DN4GB4IFYUA2INH3F2",
+      [eEthereumNetwork.sepolia]: "6B6EGFR2NKXHF8GUXYD1QUH8GBYABI5JI1",
     },
     customChains: [
       {
         network: eEtherlinkNetwork.etherlinkTest,
         chainId: 128123,
         urls: {
-          apiURL: "https://testnet-explorer.etherlink.com/api",
-          browserURL: "https://testnet-explorer.etherlink.com",
+          apiURL: "https://testnet.explorer.etherlink.com/api",
+          browserURL: "https://testnet.explorer.etherlink.com",
+        },
+      },
+      {
+        network: eEtherlinkNetwork.etherlinkMain,
+        chainId: 42793,
+        urls: {
+          apiURL: "https://explorer.etherlink.com/api",
+          browserURL: "https://explorer.etherlink.com",
+        },
+      },
+      {
+        network: eEthereumNetwork.sepolia,
+        chainId: 11155111,
+        urls: {
+          apiURL: "https://api-sepolia.etherscan.io/api",
+          browserURL: "https://sepolia.etherscan.io",
         },
       },
       {
@@ -231,6 +257,14 @@ export default {
         urls: {
           apiURL: "https://api-sepolia.arbiscan.io/api",
           browserURL: "https://sepolia.arbiscan.io",
+        },
+      },
+      {
+        network: ePolygonNetwork.amoy,
+        chainId: 80002,
+        urls: {
+          apiURL: "https://api-amoy.polygonscan.com/api",
+          browserURL: "https://amoy.polygonscan.com",
         },
       },
     ],

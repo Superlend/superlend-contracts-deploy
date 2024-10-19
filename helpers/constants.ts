@@ -41,14 +41,18 @@ export const WRAPPED_NATIVE_TOKEN_PER_NETWORK: { [network: string]: string } = {
   [eEthereumNetwork.main]: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
   [eArbitrumNetwork.arbitrum]: "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
   [eArbitrumNetwork.arbitrumTestnet]:
-    "0x8592a357252606f5cA2897BD4f500201F7245C28",
+    "0x980B62Da83eFf3D4576C647993b0c1D7faf17c73",
   [eOptimismNetwork.main]: "0x4200000000000000000000000000000000000006",
   [eAvalancheNetwork.avalanche]: "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
   [eFantomNetwork.main]: "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
   [eHarmonyNetwork.main]: "0xcF664087a5bB0237a0BAd6742852ec6c8d69A27a",
   [ePolygonNetwork.polygon]: "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
   [eEtherlinkNetwork.etherlinkTest]:
-    "0x340Fa96ACF0b8D36828e1D8963CdF3E95c58ed06",
+    "0xB1Ea698633d57705e93b0E40c1077d46CD6A51d8",
+  [eEtherlinkNetwork.etherlinkMain]:
+    "0xc9B53AB2679f573e480d01e0f49e2B5CFB7a3EAb",
+  [ePolygonNetwork.amoy]: "0x0ae690AAD8663aaB12a671A6A0d74242332de85f",
+  [eEthereumNetwork.sepolia]: "0xfFf9976782d46CC05630D1f6eBAb18b2324d6B14",
 };
 
 export const ZERO_BYTES_32 =
@@ -93,7 +97,7 @@ export const chainlinkAggregatorProxy: Record<string, string> = {
   fuji: "0x5498BB86BC934c8D34FDA08E81D444153d0D06aD",
   tenderly: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
   arbitrum: "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
-  "arbitrum-testnet": "0x5f0423B1a6935dc5596e7A24d98532b67A0AeFd8",
+  "arbitrum-testnet": "0xd30e2101a97dcbAeBCBC04F14C3f624E67A35165",
   rinkeby: "0x8A753747A1Fa494EC906cE90E9f37563A8AF630e",
   harmony: "0xdCD81FbbD6c4572A69a534D8b8152c562dA8AbEF",
   optimism: "0xA969bEB73d918f6100163Cd0fba3C586C269bee1",
@@ -104,9 +108,12 @@ export const chainlinkAggregatorProxy: Record<string, string> = {
   ropsten: "0x12BAaa24D85A4A180F0d5ae67b6aCbDDD58968EA",
   goerli: "0x60E4B131f0F219c72b0346675283E73888e4AB24",
   [eArbitrumNetwork.goerliNitro]: "0xC09e69E79106861dF5d289dA88349f10e2dc6b5C",
-  [eEthereumNetwork.sepolia]: "0x6c60d915c7a646860dba836ffcb7f112b6cfdc76",
   [eEtherlinkNetwork.etherlinkTest]:
     "0xE06FE39f066562DBfE390167AE49D8Cb66e1F887",
+  [eEtherlinkNetwork.etherlinkMain]:
+    "0x929dB17A4673f150251fDc7AC4E7B5dd7b2Fd654",
+  [ePolygonNetwork.amoy]: "0x001382149eBa3441043c1c66972b4772963f5D43",
+  [eEthereumNetwork.sepolia]: "0x694AA1769357215DE4FAC081bf1f309aDC325306",
 };
 
 export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
@@ -118,7 +125,7 @@ export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
   fuji: "0x86d67c3D38D2bCeE722E601025C25a575021c6EA",
   tenderly: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
   arbitrum: "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
-  "arbitrum-testnet": "0x5f0423B1a6935dc5596e7A24d98532b67A0AeFd8",
+  "arbitrum-testnet": "0xd30e2101a97dcbAeBCBC04F14C3f624E67A35165",
   rinkeby: "0x8A753747A1Fa494EC906cE90E9f37563A8AF630e",
   harmony: "0xbaf7C8149D586055ed02c286367A41E0aDA96b7C",
   optimism: "0xA969bEB73d918f6100163Cd0fba3C586C269bee1",
@@ -129,9 +136,12 @@ export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
   ropsten: "0x12BAaa24D85A4A180F0d5ae67b6aCbDDD58968EA",
   goerli: "0x60E4B131f0F219c72b0346675283E73888e4AB24",
   [eArbitrumNetwork.goerliNitro]: "0xC09e69E79106861dF5d289dA88349f10e2dc6b5C",
-  [eEthereumNetwork.sepolia]: "0x6c60d915c7a646860dba836ffcb7f112b6cfdc76",
+  [eEthereumNetwork.sepolia]: "0x694AA1769357215DE4FAC081bf1f309aDC325306",
   [eEtherlinkNetwork.etherlinkTest]:
     "0xE06FE39f066562DBfE390167AE49D8Cb66e1F887",
+  [eEtherlinkNetwork.etherlinkMain]:
+    "0x929dB17A4673f150251fDc7AC4E7B5dd7b2Fd654",
+  [ePolygonNetwork.amoy]: "0x001382149eBa3441043c1c66972b4772963f5D43",
 };
 
 export const ETHEREUM_SHORT_EXECUTOR =
@@ -151,6 +161,11 @@ export const POOL_ADMIN: Record<string, string> = {
   [eBaseNetwork.base]: "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
   [eBaseNetwork.baseGoerli]: "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
   [eEthereumNetwork.tenderly]: ETHEREUM_SHORT_EXECUTOR,
+  // ADMIN: POOL ADMIN: address
+  [eEtherlinkNetwork.etherlinkTest]:
+    "0x250fB04547404729D22Eb8f9C498Da13E9980f2D",
+  [eEtherlinkNetwork.etherlinkMain]:
+    "0x669bd328f6C494949Ed9fB2dc8021557A6Dd005f",
 };
 
 export const EMERGENCY_ADMIN: Record<string, string> = {
@@ -161,6 +176,12 @@ export const EMERGENCY_ADMIN: Record<string, string> = {
   [eOptimismNetwork.main]: "0xE50c8C619d05ff98b22Adf991F17602C774F785c",
   [ePolygonNetwork.polygon]: "0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58",
   [eEthereumNetwork.main]: ETHEREUM_SHORT_EXECUTOR,
+  // ADMIN: EMERGENCY ADMIN: address
+  [eEtherlinkNetwork.etherlinkTest]:
+    "0x250fB04547404729D22Eb8f9C498Da13E9980f2D",
+  
+  [eEtherlinkNetwork.etherlinkMain]:
+    "0x669bd328f6C494949Ed9fB2dc8021557A6Dd005f",
 };
 
 export const DEFAULT_NAMED_ACCOUNTS = {

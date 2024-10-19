@@ -37,7 +37,6 @@ task(`review-stable-borrow`, ``)
 
       const poolConfig = await loadPoolConfig(MARKET_NAME);
       const reserves = await dataProvider.getAllReservesTokens();
-
       const reservesToCheck = checkOnlyReserves.length
         ? reserves.filter(([reserveSymbol]) =>
             checkOnlyReserves.includes(reserveSymbol)
@@ -46,6 +45,7 @@ task(`review-stable-borrow`, ``)
 
       const reserveAssets = await dataProvider.getAllReservesTokens();
       const normalizedSymbols = Object.keys(poolConfig.ReservesConfig);
+
       if (!reserveAssets) {
         console.error("- Exiting due missing ReserveAssets");
         exit(2);

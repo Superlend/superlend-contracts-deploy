@@ -54,6 +54,7 @@ export enum ConfigNames {
   Base = "Base",
   baseGoerli = "base-goerli",
   EtherLink = "EtherLink",
+  Superlend = "Superlend",
 }
 
 export const getParamPerNetwork = <T>(
@@ -123,6 +124,8 @@ export const loadPoolConfig = (configName: ConfigNames): PoolConfiguration => {
       return BaseConfig;
     case ConfigNames.EtherLink:
       return EtherlinkV3Market;
+    case ConfigNames.Superlend:
+      return EtherlinkV3Market;
     default:
       throw new Error(
         `Unsupported pool configuration: ${configName} is not one of the supported configs ${Object.values(
@@ -186,7 +189,6 @@ export const getReserveAddresses = async (
 
   if (isLive && !poolConfig.TestnetMarket) {
     console.log("[NOTICE] Using ReserveAssets from configuration file");
-
     return (
       getParamPerNetwork<ITokenAddress>(poolConfig.ReserveAssets, network) || {}
     );
